@@ -3,10 +3,315 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="refresh" content="0; url=Care%20Observations%20Prototype.html">
-    <title>Care Observations Prototype</title>
+    <meta name="theme-color" content="#451b7a">
+    <meta name="description" content="A collection of care experience prototypes.">
+    <title>Care experiences | Telstra Health</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --purple: #451b7a;
+        --purple-dark: #301052;
+        --violet: #6b35a5;
+        --cyan: #00b9e4;
+        --ink: #24202b;
+        --muted: #625b6d;
+        --line: #e8e3ed;
+        --surface: #fff;
+        --page: #f8f6fa;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-width: 320px;
+        min-height: 100vh;
+        margin: 0;
+        color: var(--ink);
+        background: var(--page);
+        font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      }
+
+      a { color: inherit; }
+
+      .site-header {
+        height: 76px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, .18);
+        background: var(--purple-dark);
+        color: white;
+      }
+
+      .header-inner, main, .site-footer {
+        width: min(1120px, calc(100% - 48px));
+        margin-inline: auto;
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 11px;
+        color: white;
+        font-size: 18px;
+        font-weight: 650;
+        letter-spacing: -.3px;
+        text-decoration: none;
+      }
+
+      .brand-mark {
+        position: relative;
+        width: 31px;
+        height: 31px;
+        overflow: hidden;
+        border-radius: 50%;
+        background: var(--cyan);
+      }
+
+      .brand-mark::before, .brand-mark::after {
+        position: absolute;
+        width: 22px;
+        height: 8px;
+        left: 5px;
+        border: 2px solid white;
+        border-radius: 50%;
+        content: "";
+        transform: rotate(-35deg);
+      }
+
+      .brand-mark::before { top: 7px; }
+      .brand-mark::after { top: 15px; left: 4px; }
+      .header-label { color: #e4d8f0; font-size: 13px; }
+
+      main { padding-block: 56px 72px; }
+
+      .intro { max-width: 690px; margin-bottom: 36px; }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        margin: 0 0 13px;
+        color: var(--violet);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        width: 25px;
+        height: 3px;
+        border-radius: 4px;
+        background: var(--cyan);
+        content: "";
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--purple-dark);
+        font-size: clamp(36px, 5vw, 54px);
+        font-weight: 620;
+        letter-spacing: -2px;
+        line-height: 1.08;
+      }
+
+      .intro p {
+        max-width: 590px;
+        margin: 17px 0 0;
+        color: var(--muted);
+        font-size: 18px;
+      }
+
+      .section-heading {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 14px;
+      }
+
+      .section-heading h2 {
+        margin: 0;
+        color: var(--purple-dark);
+        font-size: 20px;
+        font-weight: 650;
+      }
+
+      .section-heading span { color: var(--muted); font-size: 13px; }
+
+      .prototype-card {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 28px;
+        min-height: 220px;
+        overflow: hidden;
+        padding: 34px 38px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        background: var(--surface);
+        box-shadow: 0 8px 28px rgba(48, 16, 82, .06);
+        text-decoration: none;
+        transition: box-shadow .18s ease, transform .18s ease;
+      }
+
+      .prototype-card::before {
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 5px;
+        background: linear-gradient(var(--cyan), #6a45b8);
+        content: "";
+      }
+
+      .prototype-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 34px rgba(48, 16, 82, .12);
+      }
+
+      .prototype-card:focus-visible, .brand:focus-visible {
+        outline: 3px solid var(--cyan);
+        outline-offset: 4px;
+      }
+
+      .card-type {
+        margin: 0 0 8px;
+        color: var(--violet);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+      }
+
+      .prototype-card h3 {
+        margin: 0;
+        color: var(--purple-dark);
+        font-size: 25px;
+        font-weight: 650;
+        letter-spacing: -.5px;
+      }
+
+      .card-description {
+        max-width: 570px;
+        margin: 8px 0 0;
+        color: var(--muted);
+      }
+
+      .card-action {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 48px;
+        padding: 0 20px;
+        border-radius: 26px;
+        background: var(--purple);
+        color: white;
+        font-size: 14px;
+        font-weight: 650;
+        white-space: nowrap;
+        transition: background .18s ease;
+      }
+
+      .prototype-card:hover .card-action { background: var(--purple-dark); }
+      .card-action span { font-size: 19px; line-height: 1; }
+
+      .coming-soon {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 17px;
+        padding: 17px 20px;
+        border: 1px dashed #cfc5db;
+        border-radius: 11px;
+        color: var(--muted);
+        background: rgba(255, 255, 255, .52);
+        font-size: 14px;
+      }
+
+      .coming-soon-icon {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        flex: 0 0 auto;
+        place-items: center;
+        border-radius: 50%;
+        background: #eee8f5;
+        color: var(--violet);
+        font-size: 19px;
+      }
+
+      .coming-soon strong { display: block; color: var(--purple-dark); }
+
+      .site-footer {
+        padding-block: 18px 26px;
+        border-top: 1px solid var(--line);
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      @media (max-width: 640px) {
+        .header-inner, main, .site-footer { width: min(100% - 36px, 1120px); }
+        .site-header { height: 66px; }
+        .header-label { font-size: 11px; }
+        main { padding-block: 42px 52px; }
+        .intro { margin-bottom: 29px; }
+        .intro p { font-size: 16px; }
+        .section-heading { align-items: flex-start; flex-direction: column; gap: 3px; }
+        .prototype-card { grid-template-columns: 1fr; gap: 22px; padding: 27px 24px; }
+        .card-action { justify-self: start; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+      }
+    </style>
   </head>
   <body>
-    <p><a href="Care%20Observations%20Prototype.html">Open the Care Observations prototype</a></p>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="./" aria-label="Telstra Health care experiences home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span>Telstra Health</span>
+        </a>
+        <span class="header-label">Care experiences</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">Digital health prototypes</p>
+        <h1 id="page-title">Connected care, made clearer.</h1>
+        <p>A collection of care experience concepts designed to support clinicians and the people they care for.</p>
+      </section>
+
+      <section aria-labelledby="prototypes-title">
+        <div class="section-heading">
+          <h2 id="prototypes-title">Explore prototypes</h2>
+          <span>Choose an experience to get started</span>
+        </div>
+
+        <a class="prototype-card" href="./Care%20Observations%20Prototype.html">
+          <div>
+            <p class="card-type">Clinical workflow</p>
+            <h3>Care Observations</h3>
+            <p class="card-description">Explore a patient-centred experience for recording, reviewing and understanding clinical observations over time.</p>
+          </div>
+          <span class="card-action">Open prototype <span aria-hidden="true">→</span></span>
+        </a>
+
+        <div class="coming-soon">
+          <span class="coming-soon-icon" aria-hidden="true">+</span>
+          <div><strong>More experiences are on the way</strong>This collection will grow as new prototypes are added.</div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">Prototype experience hub</footer>
   </body>
 </html>

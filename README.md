@@ -2,4 +2,4 @@
 
 ## Care Observations prototype
 
-The prototype is available in `Care Observations Prototype.html`. The site root redirects to it when served with GitHub Pages.
+The GitHub Pages landing page links to the prototype in `Care Observations Prototype.html`. Add future prototype links to `index.html`.
