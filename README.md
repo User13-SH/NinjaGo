@@ -1,18 +1,17 @@
-# Care Observations prototype
+# Care Observations prototypes
 
-Single-file HTML prototype for the Care Observations feature: observation list, charts, trend explorer, observation form, Mark In-Error dialog, and the record page with Related and Details tabs.
+This repository contains standalone HTML prototypes for the Care Observations feature. Open `index.html` to browse and launch each version; no build step is required.
 
-## Files
+## Publish with GitHub Pages
 
-- `care-observations.html` - the prototype. Open it directly in a browser; there is no build step.
-- `tests/regression.py` - Playwright (Python) regression script covering the list, filter, form, chart, record and dialog flows at several widths.
+1. Push the repository to GitHub.
+2. In the repository, open **Settings → Pages**.
+3. Under **Build and deployment**, choose **Deploy from a branch**, select the branch containing these files and the **/(root)** folder, then save.
+4. Open the published Pages URL. GitHub Pages serves `index.html` as the landing page.
 
-## Running the regression script
+The index links to:
 
-```
-pip install playwright
-playwright install chromium
-python3 tests/regression.py
-```
-
-The script loads the prototype from a local path. Edit the path inside the script if the prototype is in a different folder.
+- `care-observations_Ver3.html`
+- `care-observations_ver2.html`
+- `Care Observations Prototype.html`
+- `Care Ob/care-observations.html`

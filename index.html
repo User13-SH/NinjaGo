@@ -1,15 +1,138 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="refresh" content="0; url=./care-observations_Ver3.html" />
-    <title>Care Observations</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <p>Redirecting to the Care Observations design page...</p>
-    <script>
-      window.location.href = './care-observations_Ver3.html';
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse the Care Observations prototypes.">
+  <title>Care Observations prototypes</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #172b4d;
+      background: #f4f7fb;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+    }
+
+    main {
+      width: min(100% - 2rem, 760px);
+      margin: 0 auto;
+      padding: 4rem 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.5rem;
+      color: #526581;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 6vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .intro {
+      max-width: 55ch;
+      margin: 1rem 0 2rem;
+      color: #526581;
+      line-height: 1.6;
+    }
+
+    ul {
+      display: grid;
+      gap: 0.85rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      padding: 1.1rem 1.25rem;
+      border: 1px solid #d5deea;
+      border-radius: 0.75rem;
+      background: #fff;
+      color: #0759a5;
+      font-weight: 700;
+      text-decoration: none;
+      transition: border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+    }
+
+    a:hover {
+      transform: translateY(-2px);
+      border-color: #75a9dc;
+      box-shadow: 0 6px 18px rgb(23 43 77 / 8%);
+    }
+
+    a:focus-visible {
+      outline: 3px solid #2684ff;
+      outline-offset: 3px;
+    }
+
+    .filename {
+      display: block;
+      margin-top: 0.25rem;
+      color: #526581;
+      font-size: 0.85rem;
+      font-weight: 400;
+      overflow-wrap: anywhere;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Interactive prototypes</p>
+    <h1>Care Observations</h1>
+    <p class="intro">Choose a prototype to open. Each page is a standalone HTML file and works directly from GitHub Pages.</p>
+    <nav aria-label="Care Observations prototype pages">
+      <ul>
+        <li>
+          <a href="./care-observations_Ver3.html">
+            Care Observations — Version 3
+            <span class="filename">care-observations_Ver3.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="./care-observations_ver2.html">
+            Care Observations — Version 2
+            <span class="filename">care-observations_ver2.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="./Care%20Observations%20Prototype.html">
+            Care Observations — Prototype
+            <span class="filename">Care Observations Prototype.html</span>
+          </a>
+        </li>
+        <li>
+          <a href="./Care%20Ob/care-observations.html">
+            Care Observations — Folder copy
+            <span class="filename">Care Ob/care-observations.html</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </main>
+</body>
 </html>
